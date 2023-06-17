@@ -1,9 +1,10 @@
 package main
 
 import (
-	"basic-webapp/pkg/config"
-	"basic-webapp/pkg/handlers"
 	"net/http"
+
+	"github.com/bencyrus/golang-booking-app/pkg/config"
+	"github.com/bencyrus/golang-booking-app/pkg/handlers"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"

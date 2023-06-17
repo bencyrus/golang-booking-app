@@ -1,10 +1,11 @@
 package handlers
 
 import (
-	"basic-webapp/pkg/config"
-	"basic-webapp/pkg/models"
-	"basic-webapp/pkg/render"
 	"net/http"
+
+	"github.com/bencyrus/golang-booking-app/pkg/config"
+	"github.com/bencyrus/golang-booking-app/pkg/models"
+	"github.com/bencyrus/golang-booking-app/pkg/render"
 )
 
 // Repo is the repository used by the handlers

@@ -1,12 +1,13 @@
 package render
 
 import (
-	"basic-webapp/pkg/config"
-	"basic-webapp/pkg/models"
 	"html/template"
 	"log"
 	"net/http"
 	"path/filepath"
+
+	"github.com/bencyrus/golang-booking-app/pkg/config"
+	"github.com/bencyrus/golang-booking-app/pkg/models"
 )
 
 var functions = template.FuncMap{}

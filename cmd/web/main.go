@@ -1,15 +1,15 @@
 package main
 
 import (
-	"basic-webapp/pkg/config"
-	"basic-webapp/pkg/handlers"
-	"basic-webapp/pkg/render"
 	"fmt"
 	"log"
 	"net/http"
 	"time"
 
 	"github.com/alexedwards/scs/v2"
+	"github.com/bencyrus/golang-booking-app/pkg/config"
+	"github.com/bencyrus/golang-booking-app/pkg/handlers"
+	"github.com/bencyrus/golang-booking-app/pkg/render"
 )
 
 var app = config.AppConfig{}
