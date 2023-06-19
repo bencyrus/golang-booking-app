@@ -1,0 +1,39 @@
+{{template "base" .}}
+
+{{define "content"}}
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1 class="mt-4">Search for availibility</h1>
+
+                <form action="/reservation.html" method="get">
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="startingDate">Starting Date</label>
+                                <input required type="date" class="form-control" id="startingDate" name="startingDate">
+                                <small id="startingDateHelp" class="form-text text-muted">When do you want to check in? (YYYY-MM-DD)</small>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="endingDate">Ending Date</label>
+                                <input required type="date" class="form-control" id="endingDate" name="endingDate">
+                                <small id="endingDateHelp" class="form-text text-muted">When do you want to check out? (YYYY-MM-DD)</small>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Check Availibility</button>
+                
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+{{end}}

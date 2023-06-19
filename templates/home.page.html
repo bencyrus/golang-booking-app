@@ -1,12 +1,65 @@
 {{template "base" .}}
 
 {{define "content"}}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>This is the home page</h1>
-                <p>This is some text</p>
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/images/house.jpg" class="d-block w-100" alt="House Image">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>House Image</h5>
+                    <p>A stunning house located in the heart of the city.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/static/images/tray.jpg" class="d-block w-100" alt="Tray Image">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Tray Image</h5>
+                    <p>An elegant tray, perfect for serving guests.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/static/images/woman-laptop.jpg" class="d-block w-100" alt="Woman Working on Laptop">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Working Woman Image</h5>
+                    <p>A woman working on her laptop, a testament to our fast Wi-Fi connection.</p>
+                </div>
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center mt-4">Welcome to Fort Smythe Bed and Breakfast</h1>
+                <p>You are home away from home. Set on the majestic waters of the Atlantic Ocean. This will be a vacation you will never forget.
+                    The Fort Smythe Bed and Breakfast is a historic landmark in the heart of the city. It is a beautiful house with a rich history.
+                    The house was built in 1920 by the Smythe family. The Smythe family was one of the most prominent families in the city. They were
+                    known for their hospitality and generosity. The house was built to be a place where people could come and stay while they were visiting
+                    the city.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col text-center">
+                <a href="/make-reservation" class="btn btn-success btn-lg">Make Reservation Now</a>
+            </div>
+        </div>
+
     </div>
 {{end}}
