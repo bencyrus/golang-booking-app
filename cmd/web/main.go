@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/alexedwards/scs/v2"
-	"github.com/bencyrus/golang-booking-app/pkg/config"
-	"github.com/bencyrus/golang-booking-app/pkg/handlers"
-	"github.com/bencyrus/golang-booking-app/pkg/render"
+	"github.com/bencyrus/golang-booking-app/internal/config"
+	"github.com/bencyrus/golang-booking-app/internal/handlers"
+	"github.com/bencyrus/golang-booking-app/internal/render"
 )
 
 var app = config.AppConfig{}

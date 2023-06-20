@@ -6,20 +6,28 @@ import (
 	"net/http"
 	"path/filepath"
 
-	"github.com/bencyrus/golang-booking-app/pkg/config"
-	"github.com/bencyrus/golang-booking-app/pkg/models"
+	"github.com/bencyrus/golang-booking-app/internal/config"
+	"github.com/bencyrus/golang-booking-app/internal/models"
+	"github.com/justinas/nosurf"
 )
 
 var functions = template.FuncMap{}
 
 var app *config.AppConfig
 
+// NewTemplates sets the config for the template package
 func NewTemplates(a *config.AppConfig) {
 	app = a
 }
 
+// AddDefaultData adds data for all templates
+func AddDefaultData(td *models.TemplateData, r *http.Request) *models.TemplateData {
+	td.CSRFToken = nosurf.Token(r)
+	return td
+}
+
 // RenderTemplate renders templates using html/template
-func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
+func RenderTemplate(w http.ResponseWriter, r *http.Request, tmpl string, td *models.TemplateData) {
 	templateCache := map[string]*template.Template{}
 	if app.UseCache {
 		// Get the template cache from the app config
@@ -34,6 +42,10 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData)
 		log.Println("error getting template from cache")
 		return
 	}
+
+	// Add default data to template data
+	td = AddDefaultData(td, r)
+
 	// Render the template
 	err := t.Execute(w, td)
 	if err != nil {

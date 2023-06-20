@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	"github.com/bencyrus/golang-booking-app/pkg/config"
-	"github.com/bencyrus/golang-booking-app/pkg/handlers"
+	"github.com/bencyrus/golang-booking-app/internal/config"
+	"github.com/bencyrus/golang-booking-app/internal/handlers"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
@@ -21,6 +21,8 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Get("/about", handlers.Repo.About)
 	mux.Get("/contact", handlers.Repo.Contact)
 	mux.Get("/search-availability", handlers.Repo.Availability)
+	mux.Post("/search-availability", handlers.Repo.PostAvailability)
+	mux.Get("/search-availability-json", handlers.Repo.AvailabilityJSON)
 	mux.Get("/make-reservation", handlers.Repo.Reservation)
 	mux.Get("/generals-quarters", handlers.Repo.Generals)
 	mux.Get("/majors-suite", handlers.Repo.Majors)
